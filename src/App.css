@@ -67,6 +67,7 @@ label {
 .App-converter--to { order: 2; }
 .App-converter--input { order: 3; }
 .App-converter--button { order: 4; }
+.App-converter--total { order: 5; }
 
 .App-converter--from,
 .App-converter--to {
@@ -77,8 +78,12 @@ label {
     height: 40px;
 }
 
-.App-converter > select:first-child {
-    margin-right: 10px;
+.Select.App-converter--from.Select--single:first-child {
+    padding-right: 5px;
+}
+
+span.Select-clear-zone {
+    display: none;
 }
 
 .App-converter--input {
@@ -93,18 +98,53 @@ label {
 }
 
 .App-converter--input,
-.App-converter--button {
+.App-converter--button,
+.App-converter--total {
     flex: 1 0 100%; 
 }
-.App-converter--button__gray {
+
+.App-converter--button__gray,
+.App-converter--total__gray {
     background: #CCC;
     border: 1px #CCC;
-    border-radius: 22px;
-    color: #fff;
     width: 100%;
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: .5px;
+}
+
+.App-converter--button__gray {
+    border-radius: 22px;
+    color: #fff;
+}
+
+.App-converter--total {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.App-converter--total__gray {
+    border-radius: 8px;
+    color: black;
+    width: 100%;
+    font-size: 15px;
+}
+
+.App-converter--total__arrow {
+    width: 25px;
+    height: 20px;
+    /* background: #CCC; */
+    margin: 0 auto;
+}
+.App-converter--total__arrow:after {
+    border-bottom: 10px solid #CCC;
+    border-left: 10px solid transparent; 
+    border-right: 10px solid transparent; 
+    content: "";
+    position: absolute;
+    margin-left: -10px; */
+    width: 0; 
+    height: 0;
 }
 
 .App-converter--input  {
@@ -118,5 +158,20 @@ label {
 }
 .App-converter--input input {
     height: 40px;
+    box-sizing: border-box;
 }
 
+.App-converter--input input::-webkit-input-placeholder { 
+    padding-left: 5px;
+}
+.App-converter--input input:-moz-placeholder { 
+    padding-left: 5px;
+}
+.App-converter--input input::-moz-placeholder { 
+    padding-left: 5px;
+}
+.App-converter--input input:-ms-input-placeholder { 
+    padding-left: 5px;
+}
+
+.hidden { display: none; }
